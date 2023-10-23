@@ -1,13 +1,29 @@
-// Importar las funciones del archivo app.js
-const { sum, fromEuroToDollar } = require('./app.js');
+// Importar las funciones desde el archivo app.js
+const { sum, fromEuroToDollar, fromDollarToYen, fromYenToPound } = require('./app.js');
 
-// Comienza tu primera prueba
+// Prueba de suma
 test('adds 7 + 3 to equal 10', () => {
-    // Dentro de la prueba llamamos a nuestra función sum con 2 números
     let total = sum(7, 3);
-
-    // Esperamos que la suma de esos 2 números sea 10
     expect(total).toBe(10);
 });
 
-// Resto de tus pruebas...
+// Prueba de conversión de euro a dólar
+test("One euro should be 1.07 dollars", function() {
+    const dollars = fromEuroToDollar(3.5);
+    const expected = 3.5 * oneEuroIs.USD;
+    expect(dollars).toBe(expected);
+});
+
+// Prueba de conversión de dólar a yen
+test("One dollar should be 156.5 yen", function() {
+    const yen = fromDollarToYen(1); // Cambia el valor 1 si es necesario
+    const expected = 1 * oneEuroIs.JPY;
+    expect(yen).toBe(expected);
+});
+
+// Prueba de conversión de yen a libras
+test("One yen should be 0.87 pounds", function() {
+    const pounds = fromYenToPound(1); // Cambia el valor 1 si es necesario
+    const expected = 1 * oneEuroIs.GBP;
+    expect(pounds).toBe(expected);
+});

@@ -1,26 +1,29 @@
-// Esta es mi función que suma dos números
+let oneEuroIs = {
+    "JPY": 156.5, // japan yen
+    "USD": 1.07, // us dollar
+    "GBP": 0.87, // british pound
+}
+
+// Función que suma dos números
 const sum = (a, b) => {
     return a + b;
 }
 
+// Función que convierte de euros a dólares
 const fromEuroToDollar = function (valueInEuro) {
-    // Convertimos el valor a dólares
-    let valueInDollar = valueInEuro * 1.07;
-    // Retornamos el valor en dólares
+    let valueInDollar = valueInEuro * oneEuroIs.USD;
     return valueInDollar;
 }
 
+// Función que convierte de dólares a yenes
 const fromDollarToYen = function (valueInDollar) {
-    // Convertimos el valor a yenes
     let valueInYen = valueInDollar * oneEuroIs.JPY / oneEuroIs.USD;
-    // Retornamos el valor en yenes
     return valueInYen;
 }
 
+// Función que convierte de yenes a libras
 const fromYenToPound = function (valueInYen) {
-    // Convertimos el valor a libras
     let valueInPound = valueInYen * oneEuroIs.GBP / oneEuroIs.JPY;
-    // Retornamos el valor en libras
     return valueInPound;
 }
 
