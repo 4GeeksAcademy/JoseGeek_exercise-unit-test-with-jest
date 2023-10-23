@@ -1,30 +1,50 @@
+
+const sum = (a,b) => {
+    return a + b
+}
+
+
+console.log(sum(7,3))
+
+
+
 let oneEuroIs = {
-    "JPY": 156.5, // japan yen
-    "USD": 1.07, // us dollar
-    "GBP": 0.87, // british pound
+    "JPY": 127.9, // japan yen
+    "USD": 1.2, // us dollar
+    "GBP": 0.8, // british pound
 }
 
-// Función que suma dos números
-const sum = (a, b) => {
-    return a + b;
-}
 
-// Función que convierte de euros a dólares
-const fromEuroToDollar = function (valueInEuro) {
-    let valueInDollar = valueInEuro * oneEuroIs.USD;
+
+const fromEuroToDollar = function(valueInEuro){
+    // convert the given valueInEuro to dollars
+    let valueInDollar = valueInEuro * 1.2;
+    //return the dollar value
     return valueInDollar;
 }
 
-// Función que convierte de dólares a yenes
-const fromDollarToYen = function (valueInDollar) {
-    let valueInYen = valueInDollar * oneEuroIs.JPY / oneEuroIs.USD;
-    return valueInYen;
+
+
+
+const fromDollarToJapanYen = function(valueInDollar){
+    // convert the given valueInDollar to JPY
+    let valueInJapanYen = Math.round(valueInDollar * 106.58);
+    //return the JPY value
+    return valueInJapanYen;
 }
 
-// Función que convierte de yenes a libras
-const fromYenToPound = function (valueInYen) {
-    let valueInPound = valueInYen * oneEuroIs.GBP / oneEuroIs.JPY;
-    return valueInPound;
+
+
+
+const fromYenToPounds = function(valueInYen){
+    // convert the given valueInYen to Pounds
+    let valueInPounds = Math.round(valueInYen * 0.00625);
+    //return the Pounds value
+    return valueInPounds;
 }
 
-module.exports = { sum, fromEuroToDollar, fromDollarToYen, fromYenToPound };
+
+
+module.exports = { sum, fromEuroToDollar, fromDollarToJapanYen, fromYenToPounds }
+
+
