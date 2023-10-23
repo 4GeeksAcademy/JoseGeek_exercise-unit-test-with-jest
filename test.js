@@ -11,4 +11,3 @@ test('adds 7 + 3 to equal 10', () => {
 });
 
 // Resto de tus pruebas...
-
